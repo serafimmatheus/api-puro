@@ -1,0 +1,104 @@
+@baseURL = http://localhost:3000/api/v1
+@token = {{authenticate.response.body.token}}
+
+# @name create_user
+POST {{baseURL}}/users
+Content-Type: application/json
+
+{
+	"email": "serafim@mentores.com.br",
+	"name": "Matheus Serafim",
+	"password": "mentores123",
+	"isActive": false,
+	"role": "ADMIN"
+}
+
+###
+
+# @name create_user
+POST {{baseURL}}/users
+Content-Type: application/json
+
+{
+	"email": "raul@mentores.com.br",
+	"name": "Raul",
+	"password": "mentores123",
+	"isActive": false,
+	"role": "ADMIN"
+}
+
+###
+
+# @name create_user
+POST {{baseURL}}/users
+Content-Type: application/json
+
+{
+	"email": "kaoana@mentores.com.br",
+	"name": "Kaoana",
+	"password": "mentores123",
+	"isActive": false,
+	"role": "ADMIN"
+}
+
+###
+
+# @name create_user
+POST {{baseURL}}/users
+Content-Type: application/json
+
+{
+	"email": "brunno@mentores.com.br",
+	"name": "Brunno Lorran",
+	"password": "mentores123",
+	"isActive": false,
+	"role": "ADMIN"
+}
+
+
+
+###
+
+# @name authenticate
+POST {{baseURL}}/sessions
+Content-Type: application/json
+
+{
+	"email": "brunno@mentores.com.br",
+	"password": "mentores123"
+}
+
+###
+
+# @name authenticate
+POST {{baseURL}}/sessions
+Content-Type: application/json
+
+{
+	"email": "serafim@mentores.com.br",
+	"password": "mentores123"
+}
+
+###
+
+# @name create_products
+POST {{baseURL}}/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+	"title": "Condicionador",
+	"slug": "condicionador-400ml",
+	"tag": ["https://daumigos.grupoboticario.com.br/assets/staticImgs/tag.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/tag.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/tag.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/tag.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/tag.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/tag.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/tag.png"],
+	"titleCEO": "Condicionador",
+	"descriptionCEO": "Condicionador Au.Migos Pets 400ml",
+	"description": ["O Condicionador Au.Migos Pets é o produto ideal para hidratação dos pelos de cães e gatos. Sua formulação balanceada é especialmente desenvolvida para não agredir a pele do seu pet. O Condicionador proporciona hidratação, maciez e brilho para os pelos. Com uma fragrância suave, leve e delicada que contém tecnologia neutralizante de mau odor, que deixará o seu pet mais cheirosinho. Para cães e gatos acima de 3 meses."],
+	"coverImage": "https://daumigos.grupoboticario.com.br/assets/staticImgs/condicionador/C%C3%B3pia%20de%20CONDICIONADOR_400ml_57208_FRONTAL.png",
+	"images": ["https://daumigos.grupoboticario.com.br/assets/staticImgs/condicionador/C%C3%B3pia%20de%20CONDICIONADOR_400ml_57208_FRONTAL.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/condicionador/C%C3%B3pia%20de%20MB_16_23_aumigos_condicionador_400ml_57208_parede.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/condicionador/C%C3%B3pia%20de%20MB_16_23_aumigos_condicionador_57208.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/condicionador/C%C3%B3pia%20de%20MB_16_23_aumigos_condicionador_pelosClaros_400ml_57204_aplic2.png","https://daumigos.grupoboticario.com.br/assets/staticImgs/condicionador/C%C3%B3pia%20de%20MB_16_23_aumigos_condicionador_pelosClaros_400ml_57204.png"],
+	"benefits": ["Hidrata os pelos","Mantém a maciez e o brilho dos pelos do seu pet","Facilita a escovação","Previne o ressecamento do pelo","Desembaraça os pelos","Deixa os pelos macios e maleáveis","Pelos mais fofinhos e brilhantes","Mais maciez, brilho e hidratação aos pelos","Fácil enxágue","Condiciona e hidrata a pelagem do seu pet","Restaura a resistência dos pelos danificados","Recupera o brilho dos pelos promovendo maciez e maleabilidade","Para todos os tipos de pelo","Desenvolvido para não agredir o pelo e a pele dos cachorros e gatos filhotes","Proporciona uma fragrância suave, leve e delicada"],
+	"modeOfUse": ["Após usar o shampoo da linha, aplique o condicionador no pet ainda molhado e massageie bem por toda a pelagem. Deixe o condicionador agir por alguns minutos e enxágue bem."],
+	"consumerOrientation": ["Uso externo. Evitar contato com os olhos e mucosas. Não aplicar em ferimentos ou se estiver com a pele irritada. Não aplicar em pets com hipersensibilidade aos componentes da fórmula e/ou menores de 3 meses de idade. Em caso de irritação, lavar com água abundante, suspender o uso e procurar o médico veterinário. Em caso de ingestão acidental, consultar imediatamente o serviço de saúde mais próximo levando a embalagem. Caso ingerido por animal consultar o médico veterinário. Não guardar ou aplicar junto de alimentos, bebidas e medicamentos. Conserve o produto em local seco e ao abrigo do sol. Manter fora do alcance de crianças e pets domésticos. Leia atentamente o rótulo antes de utilizar o produto."],
+	"composition": ["Ingredientes: Água; Álcool cetoestearílico; Álcool etílico; Cloreto de hidroxietil laurdimônio; Monoestearato de glicerila; Cloreto de cetrimônio; Perfume; Fenoxietanol; Caprililglicol; Óleo da semente de Macadamia ternifolia; Proteína de Glycine soja; Extrato do fruto de Arachis hypogaea."],
+	"categoryId": "clvb6egtd0000j8y5167eo8hr"
+}
+
